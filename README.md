@@ -21,7 +21,7 @@ All code can be found in main.py
 
 `on_created()` -  Line 218\
     This function like on_modified() is inherited from the
-    FileSystemEventHandler class and overwritten to provide custom logic when an
+    FileSystemEventHandler class from the package Watchdog and overwritten to provide custom logic when an
     event is triggered. Some os (windows, unsure of linux) trigger multiple
     on_created and on_modified events when files are created or modified. To
     avoid uploading a file for duplicate events the files that these events are
