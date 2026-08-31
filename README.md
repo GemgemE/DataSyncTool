@@ -1,8 +1,8 @@
-Data synchronisation tool
+# Data synchronisation tool
 
-Locations of key functions:
+## Locations of key functions:
 
-upload_files_since_last_sync_with_retry() - Line 124
+`upload_files_since_last_sync_with_retry()` - Line 124\
     Contains the retry logic if the connection fails. The package Tenacity is
     being used for the retry logic, it allows for a retry condition and for the
     number of retries to be defined.
@@ -18,7 +18,7 @@ upload_files_since_last_sync_with_retry() - Line 124
     finished and successful. If they don't match then the upload is triggered
     again until they do.
 
-on_created() -  Line 218
+`on_created()` -  Line 218\
     This function like on_modified() is inherited from the
     FileSystemEventHandler class and overwritten to provide custom logic when an
     event is triggered. Some os (windows, unsure of linux) trigger multiple
@@ -27,13 +27,13 @@ on_created() -  Line 218
     triggered for are recorded in files_to_sync which is a set so there can't be
     duplicate uploads.
 
-calculate_remote_md5_hash() - Line 329
+`calculate_remote_md5_hash()` - Line 329\
     This function is where the md5 hash is calculated for the entire file, the
     default chunk size is 8KB in an attempt to reduce the amount of data read
     at a time. Doing the hash of the entire file can be time consuming but
     allows for more certainty that the file sent matches the local file.
 
-upload_with_resume() - Line 363
+`upload_with_resume()` - Line 363\
     In order to allow for the resuming of uploads this function starts
     uploading to a .part file. Before the upload is commenced it checks if a
     .part file already exists, if it does it uses seek() to find the end of the
