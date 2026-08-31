@@ -1,5 +1,5 @@
 # Data synchronisation tool
-All code can be found in main.py\
+All code can be found in main.py
 
 ## Locations of key functions:
 
